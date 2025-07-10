@@ -1,0 +1,19 @@
+import streamlit as st
+
+# セッション初期化
+if "step" not in st.session_state:
+    st.session_state.step = 1
+    st.session_state.answers = []
+    st.session_state.score = 0
+    st.session_state.result = ""
+
+st.title("Health Check")
+st.caption("人事アプリ｜ストレスチェック")
+
+# 質問リスト（質問文、説明、スコア条件）
+questions = [
+    ("最近、疲れていますか？", "Are you tired recently?", "yes"),
+    ("睡眠時間は足りていますか？", "Do you get enough sleep?", "no"),
+    ("最近、イライラしやすいですか？", "Do you feel irritated recently?", "yes"),
+]
+
